@@ -53,4 +53,5 @@ def sign_up():
 
 @auth.route('/logout')
 def logout():
-    return
+    logout_user()
+    return redirect(url_for('site.home'))
