@@ -43,6 +43,7 @@ def get_memes(current_user_token):
 @token_required
 def update_meme(current_user_token, id):
     meme = Meme.query.get(id)
+    meme.image_sourse = request.json['image_source']
     meme.meme_text = request.json['meme_text']
     meme.user_token = current_user_token.token
 
